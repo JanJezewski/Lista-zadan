@@ -1,4 +1,4 @@
-import { Time } from '@angular/common';
+
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,31 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Lista Zadań';
+  config: { [key: string]: string | Date; } 
 
-  getTask(): string {
-    return 'Przykładowe zadanie - 01.01 Niedziela';
-  }
-  getOccurTask(): string {
-    return 'zrobione';
-  }
-  
-  getHeader(): string {
-    return 'Dzisiaj brak zadań :-)';
-   
-  }
-
-  getTimeComunicat(): string {
-    return 'Aktualna godzina: ';
-   
+  constructor() {
+    this.config = {
+      title: 'Lista zadań' ,
+      task: 'Przykładowe zadanie - 01.01 Niedziela' ,
+      occurtask: 'zrobione' ,
+      timecomunicat: 'Aktualna godzina: ' ,
+      footer: ' © Lista zadań, All rights reserved.',
+      date: new Date().toDateString(),
+    }
   }
 
-  getFooter(): string {
-    return ' © Lista zadań, All rights reserved.';
-  }
-
-  getDate(): Date {
-    return new Date();
-  }
 
 }

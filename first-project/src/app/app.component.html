@@ -1,15 +1,9 @@
 <div class="container">
     <nav class="row">
       <div class="nav-wrapper">
-        <span class="brand-logo center">{{ title | uppercase }}</span>
+        <span class="brand-logo center">{{ config.title }}</span>
       </div>
     </nav>
-  
-    <div class="row">
-      <button class="btn col s2 offset-s10">Dodaj zadanie</button>
-      <button class="btn col s2 offset-s10">Zakończ</button>
-    </div>
-  
     <div class="row">
       <input
         class="col s8"
@@ -22,7 +16,7 @@
   
     <ul class="collection">
       <li class="collection-item row">
-        <span class="col s10">{{ getTask() }}</span>
+        <span class="col s10">{{ config.task }}</span>
         <div class="col s2 right-align">
           <button class="btn-floating btn-small red">
             <i class="material-icons">remove</i>
@@ -33,19 +27,21 @@
         </div>
       </li>
       <li class="collection-item row">
-        <span class="col done">{{ getOccurTask() }}</span>
+        <span class="col done">{{ config.occurtask }}</span>
       </li>
     </ul>
-  
-    <h1>{{ getTimeComunicat() }}{{getDate() | date: 'h:mm a'}}</h1>
+    <h1>{{ config.timecomunicat }}{{ config.date | date: 'h:mm a'}}</h1>
   
     <button class="btn red">Wyczyść</button>
   
     <footer class="page-footer mt-5">
       <div class="footer-copyright">
         <div class="container">
-          {{ getDate() | date: 'y'}}  {{ getFooter() }}
+          {{ config.date | date: 'y'}}  {{ config.footer }}
         </div>
-      </div>
+        <ul class="horizontal">
+          <li><a href="javascript:void(0)">Contact</a></li>
+          </ul>>
+        </div>
     </footer>
   </div>
