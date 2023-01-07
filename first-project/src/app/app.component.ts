@@ -11,12 +11,12 @@ export class AppComponent {
    config: { [key: string]: string | Date; } 
    tasks: Task[] = [
       {
-          name: 'Nauka' ,
+          name: '.Nauka' ,
           deadline: '2023-02-03' ,
           done: false,
       },
    {
-    name: 'Birthday' ,
+    name: '.Birthday' ,
     deadline: '2023-09-07' ,
     done: false,
    }
@@ -34,5 +34,15 @@ export class AppComponent {
   
   }
 
+list =['jeden', 'dwa', 'trzy', 'cztery', 'pięć'];  
+  weeks = {
+  monday: 'Poniedziałek',
+  tuesday: 'Wtorek',
+  wensday: 'Środa',
+  thursday: 'Czwartek',
+  friday: 'Piątek',
+  saturday: 'Sobota',
+  sunday: 'Niedziela',
+    };
 
 }
