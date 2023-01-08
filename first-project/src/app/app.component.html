@@ -19,23 +19,25 @@
         
         <span class="col s10">{{i + 1}}{{task.name}} -{{task.deadline | date: 'd.MM EEEE':'':'pl'}}</span>
         <div class="col s2 right-align">
-          <button class="btn-floating btn-small red">
-            <i class="material-icons">remove</i>
+          <button class="add">
+            <i class="material-icons">+</i>
           </button>
-          <button class="btn-floating btn-small green ml-5">
-            <i class="material-icons">check</i>
+          <button class="undo">
+            <i class="material-icons2">-</i>
           </button>
         </div>
       </li>
-      <li class="collection-item row">
+       <li class="collection-item row">
         <span class="col done">{{ config.occurtask }}</span>
       </li>
     </ul>
-    <h1>{{ config.timecomunicat }}{{ config.date | date: 'h:mm a'}}</h1>
+    <button class="clean" onclick="alert('Wyczyszczono Liste pomyśnie!')">
+      Wyczyść
+      </button>
+    
+      <h1>{{ config.timecomunicat }}{{ config.date | date: 'h:mm a'}}</h1>
   
-    <button class="btn red">Wyczyść</button>
-  
-    <footer class="page-footer mt-5">
+      <footer class="page-footer mt-5">
       <div class="footer-copyright">
         <div class="container">
           {{ config.date | date: 'y'}}  {{ config.footer }}
