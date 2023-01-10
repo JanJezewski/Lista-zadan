@@ -22,6 +22,7 @@ export class AppComponent {
    }
     ];
 
+
    constructor() {
      this.config = {
       title: 'Lista zadań' ,
@@ -33,16 +34,16 @@ export class AppComponent {
     }
   
   }
-
-list =['jeden', 'dwa', 'trzy', 'cztery', 'pięć'];  
-  weeks = {
-  monday: 'Poniedziałek',
-  tuesday: 'Wtorek',
-  wensday: 'Środa',
-  thursday: 'Czwartek',
-  friday: 'Piątek',
-  saturday: 'Sobota',
-  sunday: 'Niedziela',
-    };
+  clearTasks() {
+    this.tasks = [];
+     }
+      createTask(name: string){
+      const task: Task = {
+        name,
+        deadline: '2023-02-02',
+        done: false,
+      };
+      this.tasks.push(task);
+    }
 
 }
