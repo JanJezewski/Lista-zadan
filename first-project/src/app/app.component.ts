@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { Task } from './task';
 
 @Component({
@@ -8,8 +8,15 @@ import { Task } from './task';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-   config: { [key: string]: string | Date; } 
-   tasks: Task[] = [
+ 
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
+  taskName = 'Sugerowane zadanie codzienne' 
+  taskDate = '';
+  config: { [key: string]: string | Date; } 
+  
+  tasks: Task[] = [
       {
           name: '.Nauka' ,
           deadline: '2023-02-03' ,
@@ -21,7 +28,6 @@ export class AppComponent {
     done: false,
    }
     ];
-
 
    constructor() {
      this.config = {
@@ -37,13 +43,14 @@ export class AppComponent {
   clearTasks() {
     this.tasks = [];
      }
-      createTask(name: string){
+     createTask() {
       const task: Task = {
-        name,
-        deadline: '2023-02-02',
+        name: this.taskName,
+        deadline: this.taskDate,
         done: false,
       };
       this.tasks.push(task);
+      this.taskName = '';
+      this.taskDate = '';
     }
-
 }
