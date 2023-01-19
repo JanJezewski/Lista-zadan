@@ -37,3 +37,47 @@
   saturday: 'Sobota',
   sunday: 'Niedziela',
     };
+   
+    .background::backdrop
+
+      clearTasks() {
+    this.tasks = [];
+     }
+     createTask() {
+      const task: Task = {
+        name: this.taskName,
+        deadline: this.taskDate,
+        done: false,
+      };
+      this.tasks.push(task);
+      this.taskName = '';
+      this.taskDate = '';
+    }
+}
+{{ config.title }}
+
+
+<img src="lista zadań.jpg" alt="">
+lista zadań
+
+fonty:
+Open Sans.
+Droid Sans.
+Lato.
+Montserrat.
+Raleway.
+Roboto.
+Arvo.
+PT Sans.
+
+
+    
+    background-size: cover;
+    height: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 32px;
+  }

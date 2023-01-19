@@ -1,56 +1,73 @@
-<div class="container">
-    <nav class="row">
+<div class="Nag">
+   <h1>Lista zadań</h1>  
+</div>
+
+
+
+<div class = "background">
+  <div class="container">
+    
+   
+  <nav class="row">
       <div class="nav-wrapper">
-        <span class="brand-logo center">{{ config.title }}</span>
+        
       </div>
     </nav>
-    <div class="row">
-      <input
-        class="col s8" 
-        type="text"
-        placeholder="Dodaj zadanie i datę wykonania"
-          
-          [(ngModel)]="taskName"
-        />
-        <input class="col s2 disabled" type="date" [(ngModel)]="taskDate" />
-      <button 
-      class="btn-floating" 
-      (click)="createTask();" 
-      [disabled]="taskName ==='' || taskDate === ''"
-      >+</button>
-    </div>
-  
-    <ul class="collection">
-      <li class="collection-item row" *ngFor="let task of tasks; let i = index">
-        
-        <span class="col s10">{{i + 1}}{{task.name}} -{{task.deadline | date: 'd.MM EEEE':'':'pl'}}</span>
+    
+
+    
+<div class="row">
+    <div class="topnav">
+      <input  type="date" class="date" [(ngModel)]="taskDate" />
+      <input type="text" placeholder="Dodaj zadanie i datę wykonania"  [(ngModel)]="taskName"/>
+     <a class="active"  
+     (click)="createTask();" 
+     >Dodaj zadanie</a>
+     </div>
+    
+    
+     <ul class="collection" *ngIf="tasks.length > 0; else noTasks">
+      <ng-container *ngFor="let task of tasks; let i = index" [ngSwitch]="task.done">
+        <li class="collection-item row" *ngSwitchCase="false">
+          <span class="col s10">
+          {{i + 1}}{{task.name}} -{{task.deadline | date: 'd.MM EEEE':'':'pl'}}
+        </span>
+       
         <div class="col s2 right-align">
-          <button class="add">
-            <i class="material-icons">+</i>
+          <button class="add" (click)="markTaskAsDone(task)">
+            <i class="material-icons" >+</i>
           </button>
           <button class="undo">
             <i class="material-icons2">-</i>
           </button>
         </div>
       </li>
-       <li class="collection-item row">
-        <span class="col done">{{ config.occurtask }}</span>
+      <li class="collection-item row" *ngSwitchCase="true">
+        <span class="col done">{{task.name}}</span>
       </li>
-    </ul>
-    <button class="clean" (click)="clearTasks() ">
-      Wyczyść
-      </button>
+    </ng-container>
+  </ul>
+
+    <ng-template #noTasks>
+      <h1>Dzisiaj brak zadań 😁</h1>
+    </ng-template>
+
+    <button
+    class="btn red"
+    (click)="clearTasks()"
+    [disabled]="tasks.length === 0"
+  >
+    Wyczyść
+  </button>
     
-      <h1>{{ config.timecomunicat }}{{ config.date | date: 'h:mm a'}}</h1>
+      <h3>{{ config.timecomunicat }}{{ config.date | date: 'h:mm a'}}</h3>
   
       <footer class="page-footer mt-5">
       <div class="footer-copyright">
         <div class="container">
           {{ config.date | date: 'y'}}  {{ config.footer }}
         </div>
-        <ul class="horizontal">
-          <li><a href="javascript:void(0)">Contact</a></li>
-          </ul>>
         </div>
     </footer>
   </div>
+</div>
