@@ -1,22 +1,12 @@
-<div class="Nag">
-   <h1>Lista zadań</h1>  
-</div>
-
-
-
-<div class = "background">
+  <div class = "background">
   <div class="container">
-    
-   
+   <i class = "Nag">Lista Zadań</i>
   <nav class="row">
       <div class="nav-wrapper">
-        
       </div>
     </nav>
     
-
-    
-<div class="row">
+    <div class="row">
     <div class="topnav">
       <input  type="date" class="date" [(ngModel)]="taskDate" />
       <input type="text" placeholder="Dodaj zadanie i datę wykonania"  [(ngModel)]="taskName"/>
@@ -24,11 +14,10 @@
      (click)="createTask();" 
      >Dodaj zadanie</a>
      </div>
-    
-    
      <ul class="collection" *ngIf="tasks.length > 0; else noTasks">
       <ng-container *ngFor="let task of tasks; let i = index" [ngSwitch]="task.done">
         <li class="collection-item row" *ngSwitchCase="false">
+          
           <span class="col s10">
           {{i + 1}}{{task.name}} -{{task.deadline | date: 'd.MM EEEE':'':'pl'}}
         </span>

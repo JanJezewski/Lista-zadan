@@ -28,19 +28,25 @@
   }
 
   .Nag {
-    background-color: rgba(211, 193, 193, 0.795); 
-    font-family: Lato;
-    font-size: 32px;
+    background-color: rgba(192, 190, 190, 0.795); 
     text-align: center;
-    height: 100px;
+    font-family: Lato;
+    font-style: normal;
+    color: rgb(255, 255, 255);
+    font-size: 32px;
+    display: block;
+    text-align: left;
     width: 100%;
+   
     
     
   }
   .container{
     
       font-family: Lato;
-      font-size: 22px;
+      font-size: 32px;
+      size: 1000px;
+      width: 1300px;
       
     text-align: center;
       
@@ -64,7 +70,7 @@
     margin: 8px;
     text-align: center;
     text-decoration: none;
-    font-size: 10px;
+    font-size: 20px;
   }
 
   .undo{
@@ -75,7 +81,7 @@
     margin: 8px;
     text-align: center;
     text-decoration: none;
-    font-size: 10px;
+    font-size: 20px;
   }
   .clean {
     background-color: rgb(252, 113, 0);
@@ -95,7 +101,7 @@ button {
     margin: 10px;
     text-align: center;
     text-decoration: none;
-    font-size: 10px;
+    font-size: 20px;
   }
  .collection{
   border-collapse: collapse;
@@ -130,7 +136,7 @@ button {
 
 /* Style the "active" element to highlight the current page */
 .topnav a.active {
-  background-color: #2196F3;
+  background-color: #6a7177;
   color: white;
 }
 .topnav input.date[type=date] {
